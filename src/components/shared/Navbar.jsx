@@ -1,6 +1,7 @@
 import React from "react";
 
 const Navbar = () => {
+
   const navLink = (
     <>
       <li>
@@ -55,15 +56,15 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <ul className="menu menu-horizontal px-1 text-white">{navLink}</ul>
-          <a className="btn bg-[#FF5A3C] text-white outline-none border-none">
-            <select className="bg-transparent border-none outline-none">
-              <option selected className="bg-[#FF5A3C]">
+          <div className="btn bg-[#FF5A3C] text-white outline-none border-none">
+            <select  className="bg-transparent border-none outline-none text-sm font-normal">
+              <option value={"ES"} className="bg-[#FF5A3C]">
                 ES
               </option>
-              <option className="bg-[#FF5A3C]">BD</option>
-              <option className="bg-[#FF5A3C]">IND</option>
+              <option value={"BD"} className="bg-[#FF5A3C]">BD</option>
+              <option value={"IND"} className="bg-[#FF5A3C]">IND</option>
             </select>
-          </a>
+          </div>
         </div>
       </div>
     </div>

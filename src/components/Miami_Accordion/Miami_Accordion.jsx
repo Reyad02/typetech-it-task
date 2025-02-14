@@ -1,5 +1,7 @@
 import React from "react";
 import Card from "../shared/Card";
+import { MdArrowOutward } from "react-icons/md";
+import { FiArrowDownRight } from "react-icons/fi";
 
 const Miami_Accordion = ({ heading }) => {
   const cardsContents = [
@@ -63,8 +65,11 @@ const Miami_Accordion = ({ heading }) => {
     <div>
       <div className="collapse bg-white text-black">
         <input type="radio" name="my-accordion-1" />
-        <div className="collapse-title text-2xl font-bold border-[#D6D6D6] border-b pb-5 pl-0">
+        <div className="collapse-title text-2xl font-bold border-[#D6D6D6] border-b pb-5 pl-0 flex justify-between">
           {heading}
+          <div className="btn bg-[#FF5A3C] outline-none border-none">
+            <FiArrowDownRight className="text-white text-xl font-semibold" />
+          </div>
         </div>
         <div className="collapse-content pt-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">

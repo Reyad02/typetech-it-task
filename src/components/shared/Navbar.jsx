@@ -1,6 +1,25 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [background, setBackground] = useState("bg-transparent");
+  const [textColor, setTextColor] = useState("text-white");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+      if (window.scrollY > 700) {
+        setTextColor("text-black font-semibold")
+      } else {
+        setBackground("bg-transparent"); 
+        setTextColor("text-white font-normal")
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLink = (
     <>
@@ -26,7 +45,9 @@ const Navbar = () => {
   );
   return (
     <div className="">
-      <div className="navbar b fixed top-0 left-0 right-0 z-10 max-w-7xl mx-auto bg-transparent">
+      <div
+        className={`navbar fixed top-0 left-0 right-0 z-10 ${background} max-w-7xl mx-auto backdrop-blur-sm`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -52,17 +73,21 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl text-white">daisyUI</a>
+          <a className={`btn btn-ghost text-xl ${textColor}`}>daisyUI</a>
         </div>
         <div className="navbar-end">
-          <ul className="menu menu-horizontal px-1 text-white">{navLink}</ul>
-          <div className="btn bg-[#FF5A3C] text-white outline-none border-none">
-            <select  className="bg-transparent border-none outline-none text-sm font-normal">
+          <ul className={`menu menu-horizontal px-1 ${textColor}`}>{navLink}</ul>
+          <div className={`btn bg-[#FF5A3C] ${textColor} outline-none border-none`}>
+            <select className="bg-transparent border-none outline-none text-sm font-normal">
               <option value={"ES"} className="bg-[#FF5A3C]">
                 ES
               </option>
-              <option value={"BD"} className="bg-[#FF5A3C]">BD</option>
-              <option value={"IND"} className="bg-[#FF5A3C]">IND</option>
+              <option value={"BD"} className="bg-[#FF5A3C]">
+                BD
+              </option>
+              <option value={"IND"} className="bg-[#FF5A3C]">
+                IND
+              </option>
             </select>
           </div>
         </div>

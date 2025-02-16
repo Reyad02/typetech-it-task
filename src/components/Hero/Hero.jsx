@@ -12,12 +12,12 @@ const Hero = () => {
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-white">
-          <div className="max-w-4xl">
-            <p className="flex justify-center items-center mb-1"><FaHome/>Real Estate Agency</p>
-            <h1 className="mb-5 text-8xl font-bold">
+          <div className="md:max-w-2xl lg:max-w-4xl">
+            <p className="flex justify-center items-center mb-5 text-sm md:text-base"><FaHome/>Real Estate Agency</p>
+            <h1 className="mb-5 text-3xl md:text-6xl lg:text-8xl font-bold">
               Miami Real Estate Specialists
             </h1>
-            <p className="mb-5 text-base">
+            <p className="mb-5 text-sm md:text-base">
               your specialists in residential and commercial properties. From
               dream homes to prime business spaces, trust our unique expertise
               to guide you in Miami/South Florida's dynamic market.

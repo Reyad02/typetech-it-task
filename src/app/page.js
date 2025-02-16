@@ -6,21 +6,21 @@ import { useState } from "react";
 import Monroe_Accordion from "@/components/Monroe_Accordion/Monroe_Accordion";
 
 export default function Home() {
-  const [activeState, setActiveState] = useState(0);
+  const [activeState, setActiveState] = useState(1);
 
   return (
     <main className="bg-white">
       <Hero></Hero>
       <section className="max-w-7xl mx-auto py-20 flex flex-col gap-6">
-        <Miami_Accordion
-          activeState={activeState}
-          onClick={() => setActiveState(0)}
-          heading={"Miami Dade County"}
-        />
         <Broward_Accordion
           activeState={activeState}
           onClick={() => setActiveState(1)}
           heading={"Broward County"}
+        />
+        <Miami_Accordion
+          activeState={activeState}
+          onClick={() => setActiveState(0)}
+          heading={"Miami Dade County"}
         />
         <Monroe_Accordion
           activeState={activeState}

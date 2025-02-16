@@ -7,16 +7,17 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
       if (window.scrollY > 700) {
-        setTextColor("text-black font-semibold")
+        setTextColor("text-black");
+        setBackground("backdrop-blur-sm");
       } else {
-        setBackground("bg-transparent"); 
-        setTextColor("text-white font-normal")
+        setBackground("bg-transparent backdrop-blur-none");
+        setTextColor("text-white font-normal");
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -46,7 +47,7 @@ const Navbar = () => {
   return (
     <div className="">
       <div
-        className={`navbar fixed top-0 left-0 right-0 z-10 ${background} max-w-7xl mx-auto backdrop-blur-sm`}
+        className={`navbar fixed top-0 left-0 right-0 z-10 ${background} max-w-7xl mx-auto `}
       >
         <div className="navbar-start">
           <div className="dropdown">
@@ -73,23 +74,25 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <a className={`btn btn-ghost text-xl ${textColor}`}>daisyUI</a>
+          <a className={`btn btn-ghost text-xl ${textColor}`}>REYAD</a>
         </div>
         <div className="navbar-end">
-          <ul className={`menu menu-horizontal px-1 ${textColor}`}>{navLink}</ul>
-          <div className={`btn bg-[#FF5A3C] ${textColor} outline-none border-none`}>
-            <select className="bg-transparent border-none outline-none text-sm font-normal">
-              <option value={"ES"} className="bg-[#FF5A3C]">
-                ES
-              </option>
-              <option value={"BD"} className="bg-[#FF5A3C]">
-                BD
-              </option>
-              <option value={"IND"} className="bg-[#FF5A3C]">
-                IND
-              </option>
-            </select>
-          </div>
+          <ul className={`menu menu-horizontal px-1 ${textColor}`}>
+            {navLink}
+          </ul>
+          <select
+            className={`pl-2 pr-0 py-3 text-white rounded-md bg-[#FF5A3C] ${textColor}  border-none outline-none text-sm font-normal hover:cursor-pointer `}
+          >
+            <option value={"ES"} className="bg-[#F3F3F3] text-black">
+              ES
+            </option>
+            <option value={"BD"} className="bg-[#F3F3F3] text-black">
+              BD
+            </option>
+            <option value={"IND"} className="bg-[#F3F3F3] text-black">
+              IND
+            </option>
+          </select>
         </div>
       </div>
     </div>

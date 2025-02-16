@@ -13,7 +13,7 @@ const Card = ({ image, title }) => {
       </figure>
       <div className="card-body flex-row items-center justify-between text-center">
         <h2 className="card-title">{title}</h2>
-        <div className="btn bg-[#F3F3F3] outline-none border-none"><MdArrowOutward className="text-black text-xl"/></div>
+        <div className="btn bg-[#F3F3F3] hover:bg-[#FF5A3C] text-black hover:text-white  outline-none border-none"><MdArrowOutward className=" text-xl"/></div>
       </div>
     </div>
   );

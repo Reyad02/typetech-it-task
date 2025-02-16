@@ -7,7 +7,7 @@ import { LuArrowUpDown } from "react-icons/lu";
 import { IoSearch } from "react-icons/io5";
 import { cardsContents } from "@/Constant/CardInfo";
 
-const Miami_Accordion = ({ heading, activeState, onClick }) => {
+const Monroe_Accordion = ({ heading, activeState, onClick }) => {
 
   return (
     <div>
@@ -16,11 +16,10 @@ const Miami_Accordion = ({ heading, activeState, onClick }) => {
           type="radio"
           name="my-accordion-1"
           onClick={onClick}
-          defaultChecked
         />
         <div className="collapse-title text-2xl font-bold border-[#D6D6D6] border-b pb-5 pl-0 flex justify-between">
           {heading}
-          {activeState == 0 ? (
+          {activeState == 2 ? (
             <div className="flex justify-center items-center gap-8">
               <IoSearch className=" text-xl"/>
               <LuArrowUpDown className=" text-xl"/>
@@ -47,4 +46,4 @@ const Miami_Accordion = ({ heading, activeState, onClick }) => {
   );
 };
 
-export default Miami_Accordion;
+export default Monroe_Accordion;
